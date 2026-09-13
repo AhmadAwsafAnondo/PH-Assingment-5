@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import NavLogo from "../assets/logo-text.png";
+
 function Navbar() {
 
     const [menuOpen, setMenuOpen] = useState(false);
@@ -18,20 +20,13 @@ function Navbar() {
             </button>
 
 
-            <a
+        <a
             href="#home"
             className="flex items-center gap-2"
             >
 
-            <div className="gradient-bg w-9 h-9 rounded-lg flex items-center justify-center text-white font-bold">
-                DS
-            </div>
-
-            <span className="brand-gradient text-xl font-bold">
-                Dev Stack
-            </span>
-
-            </a>
+            <img className="  rounded-lg flex items-center justify-center" src={NavLogo} alt="" />
+        </a>
 
 
             <div className="hidden md:flex gap-6">

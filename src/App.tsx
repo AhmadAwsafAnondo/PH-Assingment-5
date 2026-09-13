@@ -14,17 +14,12 @@ import type { Technology } from "./types/technology";
 
 function App() {
 
-  // All technologies
   const [technologies, setTechnologies] = useState<Technology[]>([]);
 
-  // Selected technologies
   const [stack, setStack] = useState<Technology[]>([]);
 
-  // Loading
   const [loading, setLoading] = useState(true);
 
-
-  // Load JSON
   useEffect(() => {
 
     fetch("/data/technologies.json")
@@ -40,8 +35,6 @@ function App() {
 
   }, []);
 
-
-  // Add technology
   const addToStack = (technology: Technology) => {
 
     const alreadyAdded = stack.find(
@@ -65,7 +58,6 @@ function App() {
   };
 
 
-  // Remove technology
   const removeFromStack = (id: string) => {
 
     setStack(
@@ -75,8 +67,6 @@ function App() {
     toast.info("Technology removed!");
   };
 
-
-  // Remove all
   const removeAll = () => {
 
     setStack([]);
@@ -94,9 +84,6 @@ function App() {
 
       <Hero />
 
-
-      {/* Technologies */}
-
       <section
         id="technologies"
         className="max-w-7xl mx-auto px-4 py-16"
@@ -109,9 +96,6 @@ function App() {
         <p className="text-gray-500 mt-2">
           Pick technologies to build your ideal stack.
         </p>
-
-
-        {/* Loading */}
 
         {loading && (
 
@@ -128,8 +112,6 @@ function App() {
 
         )}
 
-
-        {/* Main Content */}
 
         {!loading && (
 
@@ -168,8 +150,6 @@ function App() {
             </div>
 
 
-            {/* Your Stack */}
-
             <YourStack
 
               stack={stack}
@@ -187,65 +167,8 @@ function App() {
       </section>
 
 
-      {/* Projects */}
-
-      <section
-        id="projects"
-        className="max-w-7xl mx-auto px-4 py-16"
-      >
-
-        <h2 className="text-3xl font-bold">
-          Projects
-        </h2>
-
-        <p className="mt-2 text-gray-600">
-          Build amazing projects with your selected stack.
-        </p>
-
-      </section>
-
-
-      {/* About */}
-
-      <section
-        id="about"
-        className="max-w-7xl mx-auto px-4 py-16"
-      >
-
-        <h2 className="text-3xl font-bold">
-          About Dev Stack
-        </h2>
-
-        <p className="mt-3 text-gray-600">
-          Curated tools, technologies, and resources for developers
-          building modern software.
-        </p>
-
-      </section>
-
-
-      {/* Contact */}
-
-      <section
-        id="contact"
-        className="max-w-7xl mx-auto px-4 py-16"
-      >
-
-        <h2 className="text-3xl font-bold">
-          Contact
-        </h2>
-
-        <p className="mt-2 text-gray-600">
-          Have a question? Get in touch with us.
-        </p>
-
-      </section>
-
-
       <Footer />
 
-
-      {/* Toast */}
 
       <ToastContainer
         position="top-right"

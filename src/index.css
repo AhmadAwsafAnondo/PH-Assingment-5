@@ -1,36 +1,21 @@
 @import "tailwindcss";
 
-    :root {
-    --brand-gradient: linear-gradient(
-        90deg,
-        #f97316 0%,
-        #ec4899 50%,
-        #8b5cf6 100%
-    );
-    }
+:root {
+    --brand-gradient: linear-gradient(90deg,#f97316,#ec4899,#8b5cf6);
+}
 
-    * {
-    box-sizing: border-box;
-    }
-
-    html {
-    scroll-behavior: smooth;
-    }
-
-    body {
+body {
     margin: 0;
-    font-family: Inter, system-ui, sans-serif;
-    background: #fafafa;
-    color: #171717;
-    }
+    font-family: Arial, sans-serif;
+}
 
-    .brand-gradient {
+.brand-gradient {
     background: var(--brand-gradient);
-    -webkit-background-clip: text;
     background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
-    }
+}
 
-    .gradient-bg {
+.gradient-bg {
     background: var(--brand-gradient);
-    }
+}

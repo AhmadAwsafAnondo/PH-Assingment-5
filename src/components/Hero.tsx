@@ -55,8 +55,8 @@ function Hero() {
         <div>
 
             <img
-            src="/hero-image.png"
-            alt="Development technologies"
+            src="../assets/banner-stack.png"
+            alt=""
             className="w-full rounded-3xl"
             />
 

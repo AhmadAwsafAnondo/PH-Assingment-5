@@ -6,20 +6,14 @@ import technologies from "./technologies.json";
 
 function App() {
 
-  // Technology data
   const [data, setData] = useState<any[]>([]);
 
-  // Selected technologies
   const [stack, setStack] = useState<any[]>([]);
 
-  // Loading
   const [loading, setLoading] = useState(true);
 
-  // Mobile menu
   const [menuOpen, setMenuOpen] = useState(false);
 
-
-  // Load JSON data
   useEffect(() => {
 
     setTimeout(() => {
@@ -29,11 +23,8 @@ function App() {
 
   }, []);
 
-
-  // Add technology
   const addToStack = (technology: any) => {
 
-    // Check duplicate
     const alreadyAdded = stack.find(
       item => item.id === technology.id
     );
@@ -48,8 +39,6 @@ function App() {
     toast.success(`${technology.name} added to your stack!`);
   };
 
-
-  // Remove one technology
   const removeFromStack = (id: string) => {
 
     const removed = stack.find(item => item.id === id);
@@ -61,8 +50,6 @@ function App() {
     toast.info(`${removed.name} removed from your stack!`);
   };
 
-
-  // Remove all
   const removeAll = () => {
 
     setStack([]);
@@ -75,14 +62,9 @@ function App() {
     <div className="min-h-screen bg-gray-50">
 
 
-      {/* ================= NAVBAR ================= */}
-
       <nav className="sticky top-0 z-50 bg-white border-b">
 
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-
-
-          {/* Hamburger */}
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -90,9 +72,6 @@ function App() {
           >
             ☰
           </button>
-
-
-          {/* Logo */}
 
           <a
             href="#home"
@@ -110,8 +89,6 @@ function App() {
           </a>
 
 
-          {/* Desktop Menu */}
-
           <div className="hidden md:flex gap-7">
 
             <a href="#home">Home</a>
@@ -126,9 +103,6 @@ function App() {
 
           </div>
 
-
-          {/* Buttons */}
-
           <div className="flex items-center gap-2">
 
             <button className="hidden sm:block px-3 py-2">
@@ -142,9 +116,6 @@ function App() {
           </div>
 
         </div>
-
-
-        {/* Mobile Menu */}
 
         {menuOpen && (
 
@@ -169,10 +140,6 @@ function App() {
         )}
 
       </nav>
-
-
-
-      {/* ================= HERO ================= */}
 
       <section
         id="home"
@@ -224,9 +191,6 @@ function App() {
 
         </div>
 
-
-        {/* Hero Image */}
-
         <div>
 
           <img
@@ -238,10 +202,6 @@ function App() {
         </div>
 
       </section>
-
-
-
-      {/* ================= TECHNOLOGIES ================= */}
 
       <section
         id="technologies"
@@ -255,9 +215,6 @@ function App() {
         <p className="text-gray-500 mt-2">
           Pick technologies to build your ideal stack.
         </p>
-
-
-        {/* Loading */}
 
         {loading && (
 
@@ -274,15 +231,9 @@ function App() {
 
         )}
 
-
-        {/* Content */}
-
         {!loading && (
 
           <div className="grid lg:grid-cols-[1fr_300px] gap-8 mt-10">
-
-
-            {/* Technology Cards */}
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
@@ -292,9 +243,6 @@ function App() {
                   key={technology.id}
                   className="bg-white border rounded-2xl p-5 shadow-sm"
                 >
-
-
-                  {/* Icon + Badge */}
 
                   <div className="flex justify-between items-start">
 
@@ -310,22 +258,13 @@ function App() {
 
                   </div>
 
-
-                  {/* Name */}
-
                   <h3 className="text-xl font-bold mt-5">
                     {technology.name}
                   </h3>
 
-
-                  {/* Description */}
-
                   <p className="text-gray-600 text-sm mt-2 min-h-[65px]">
                     {technology.description}
                   </p>
-
-
-                  {/* Category + Difficulty */}
 
                   <div className="flex flex-wrap gap-2 mt-4">
 
@@ -340,14 +279,10 @@ function App() {
                   </div>
 
 
-                  {/* Rating */}
-
                   <p className="mt-4">
                     ⭐ {technology.rating}
                   </p>
 
-
-                  {/* Add Button */}
 
                   <button
                     onClick={() => addToStack(technology)}
@@ -380,10 +315,6 @@ function App() {
 
             </div>
 
-
-
-            {/* ================= YOUR STACK ================= */}
-
             <div className="bg-white border rounded-2xl p-5 h-fit lg:sticky lg:top-24">
 
               <div className="flex justify-between items-start">
@@ -415,9 +346,6 @@ function App() {
 
               </div>
 
-
-              {/* Empty */}
-
               {stack.length === 0 && (
 
                 <div className="text-center py-12">
@@ -437,9 +365,6 @@ function App() {
                 </div>
 
               )}
-
-
-              {/* Selected technologies */}
 
               {stack.length > 0 && (
 
@@ -496,9 +421,6 @@ function App() {
       </section>
 
 
-
-      {/* ================= PROJECTS ================= */}
-
       <section
         id="projects"
         className="max-w-7xl mx-auto px-4 py-16"
@@ -514,9 +436,6 @@ function App() {
 
       </section>
 
-
-
-      {/* ================= ABOUT ================= */}
 
       <section
         id="about"
@@ -535,9 +454,6 @@ function App() {
       </section>
 
 
-
-      {/* ================= CONTACT ================= */}
-
       <section
         id="contact"
         className="max-w-7xl mx-auto px-4 py-16"
@@ -554,15 +470,10 @@ function App() {
       </section>
 
 
-
-      {/* ================= FOOTER ================= */}
-
       <footer className="bg-white border-t">
 
         <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-10">
 
-
-          {/* Brand */}
 
           <div>
 
@@ -590,9 +501,6 @@ function App() {
 
           </div>
 
-
-          {/* Product */}
-
           <div>
 
             <h3 className="font-bold">
@@ -615,9 +523,6 @@ function App() {
 
           </div>
 
-
-          {/* Company */}
-
           <div>
 
             <h3 className="font-bold">
@@ -637,9 +542,6 @@ function App() {
             </div>
 
           </div>
-
-
-          {/* Legal */}
 
           <div>
 
@@ -663,9 +565,6 @@ function App() {
 
         </div>
 
-
-        {/* Bottom */}
-
         <div className="border-t">
 
           <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col md:flex-row justify-between gap-3 text-sm text-gray-500">
@@ -687,9 +586,6 @@ function App() {
         </div>
 
       </footer>
-
-
-      {/* Toast */}
 
       <ToastContainer
         position="top-right"

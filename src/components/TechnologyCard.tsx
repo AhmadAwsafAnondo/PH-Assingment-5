@@ -10,7 +10,7 @@ function TechnologyCard({technology,isAdded,addToStack}: Props) {
 
     return (
 
-    <div className="bg-white border rounded-2xl p-5 shadow-sm">
+    <div className="bg-white border-gray-900 rounded-2xl p-5 shadow-sm">
 
 
         <div className="flex justify-between items-start">

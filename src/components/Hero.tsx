@@ -1,3 +1,5 @@
+import BannerImg from "../assets/banner-stack.png"
+
 function Hero() {
 
     return (
@@ -55,7 +57,7 @@ function Hero() {
         <div>
 
             <img
-            src="../assets/banner-stack.png"
+            src={BannerImg}
             alt=""
             className="w-full rounded-3xl"
             />

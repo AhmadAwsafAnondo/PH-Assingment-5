@@ -13,7 +13,7 @@ function YourStack({
 
     return (
 
-    <div className="bg-white border rounded-2xl p-5 h-fit lg:sticky lg:top-24">
+    <div className="bg-white border-gray-900 rounded-2xl p-5 h-fit lg:sticky lg:top-24">
 
 
         <div className="flex justify-between">
@@ -48,9 +48,6 @@ function YourStack({
 
             <div className="text-center py-12">
 
-            <p className="text-4xl">
-                🧩
-            </p>
 
             <p className="mt-4 text-gray-600">
                 No technologies selected yet.

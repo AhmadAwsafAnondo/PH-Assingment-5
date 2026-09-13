@@ -15,8 +15,10 @@ function Footer() {
                 DS
                 </div>
 
+                <span className="text-xl font-bold">Dev</span>
+
                 <span className="brand-gradient text-xl font-bold">
-                Dev Stack
+                Stack
                 </span>
 
             </div>
